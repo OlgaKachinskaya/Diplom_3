@@ -1,0 +1,15 @@
+{
+  "test_main_page.py::TestMainFunctionality::test_constructor_navigation[firefox]": true,
+  "test_main_page.py::TestConstructorNavigation::test_constructor_navigation[firefox]": true,
+  "test_main_page.py::TestConstructorNavigation::test_order_feed_navigation": true,
+  "test_main_page.py::test_ingredient_modal": true,
+  "test_main_page.py::test_ingredient_counter": true,
+  "test_main_page.py::test_ingredient_counter_increases_from_zero": true,
+  "test_main_page.py::test_ingredient_counter_increases": true,
+  "test_main_page.py::test_ingredient_counter_increases_with_drag_and_drop": true,
+  "test_main_page.py::test_ingredient_drag_and_drop": true,
+  "test_main_page.py": true,
+  "test_order.py::TestOrderFeed::test_order_counters_increase": true,
+  "test_order.py::TestOrderCounters::test_total_orders_counter_increases_after_new_order": true,
+  "test_order.py::test_total_orders_counter_increases_after_new_order": true
+}
