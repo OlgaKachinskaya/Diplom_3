@@ -27,7 +27,7 @@ class MainPageLocators:
 
     INGREDIENT_KRATORNAYA = (By.XPATH, "//img[@alt='Краторная булка N-200i']")
 
-
+    ID_ORDER= (By.XPATH, "// h2 [@class = 'Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8' and text() != '9999']")
     # Лента заказов
     COMPLETED_ORDERS = (By.XPATH, "//p[contains(text(),'Готовы:')]")
     COMPLETED_ORDERS_COUNTER = (By.XPATH, "//p[normalize-space()='153072']")

@@ -28,16 +28,6 @@ def driver(request):
 
 
 @pytest.fixture
-def main_page(driver):
-    return MainPage(driver)
-
-
-@pytest.fixture
-def order_page(driver):
-    return OrderPage(driver)
-
-
-@pytest.fixture
 def authorized_user(driver, account_page):
     account_page.click_account_button()
     account_page.enter_email(EMAIL)
