@@ -66,7 +66,7 @@ class OrderPage(BasePage):
     @allure.step('Проверить видимость заказа в ленте')
     def is_order_visible_in_feed(self, order_id):
         locator = self.find_and_format_locator(
-            (By.XPATH, "//p[contains(text(),'{}')]"),
+            OrderLocators.ORDER_IN_FEED,
             order_id
         )
         return self.is_element_visible(locator)
@@ -74,7 +74,7 @@ class OrderPage(BasePage):
     @allure.step('Проверить статус заказа')
     def is_order_in_progress(self, order_id):
         locator = self.find_and_format_locator(
-            (By.XPATH, "//p[contains(text(),'{}')]/following::p[contains(text(),'Готовится')]"),
+            OrderLocators.ORDER_IN_PROGRESS_STATUS,
             order_id
         )
         return self.is_element_visible(locator)

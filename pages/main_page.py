@@ -38,7 +38,8 @@ class MainPage(BasePage):
 
     @allure.step('закрываем модальное окно')
     def close_modal(self):
-        self.click_element_when_ready(OrderLocators.CLOSE_ORDER_DETAILS_BUTTON)
+        self.wait_for_element_visible(OrderLocators.CLOSE_ORDER_DETAILS_BUTTON)
+        self.click_to_element(OrderLocators.CLOSE_ORDER_DETAILS_BUTTON)
 
     @allure.step('закрываем модальное окно деталей ингредиентов')
     def close_ingredient_modal(self):

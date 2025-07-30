@@ -35,7 +35,8 @@ class OrderLocators:
     )
     # Статус заказа
     ORDER_STATUS = (By.XPATH, "//p[contains(@class, 'status_done')]")
-
+    ORDER_IN_FEED = (By.XPATH, "//p[contains(text(),'{}')]")
+    ORDER_IN_PROGRESS_STATUS = (By.XPATH, "//p[contains(text(),'{}')]/following::p[contains(text(),'Готовится')]")
     # Состав заказа
     ORDER_INGREDIENTS_LIST = (By.XPATH, "//div[contains(@class, 'OrderIngredients_ingredients__')]")
     ORDER_TOTAL_PRICE = (By.XPATH, "//p[contains(@class, 'OrderIngredients_price__')]")
