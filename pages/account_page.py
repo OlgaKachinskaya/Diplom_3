@@ -14,7 +14,7 @@ class AccountPage(BasePage):
 
     @allure.step('Открыть страницу входа')
     def open_login_page(self):
-        self.driver.get(LOGIN_URL)
+        self.navigate_to(LOGIN_URL)
 
     @allure.step('Выполнить вход')
     def login(self, email, password):
@@ -28,15 +28,11 @@ class AccountPage(BasePage):
 
     @allure.step('Ввести email')
     def enter_email(self, email):
-        email_input = self.driver.find_element(*AccountPageLocators.EMAIL_INPUT)
-        email_input.clear()
-        email_input.send_keys(email)
+        self.add_text_to_element(AccountPageLocators.EMAIL_INPUT, email)
 
     @allure.step('Ввести пароль')
     def enter_password(self, password):
-        password_input = self.driver.find_element(*AccountPageLocators.PASSWORD_INPUT)
-        password_input.clear()
-        password_input.send_keys(password)
+        self.add_text_to_element(AccountPageLocators.PASSWORD_INPUT, password)
 
     @allure.step('Нажать кнопку "Войти')
     def click_login(self):
@@ -56,16 +52,12 @@ class AccountPage(BasePage):
 
     @allure.step('Получить количество завершенных заказов')
     def get_completed_orders_count(self):
-        return len(self.driver.find_elements(*AccountPageLocators.ORDER_COMPLETED))
+        return len(self.find_list(AccountPageLocators.ORDER_COMPLETED))
 
     @allure.step('обновить данные профиля')
     def update_profile_info(self, name=None, email=None):
         if name:
-            name_input = self.driver.find_element(*AccountPageLocators.PROFILE_NAME_INPUT)
-            name_input.clear()
-            name_input.send_keys(name)
+            self.add_text_to_element(AccountPageLocators.PROFILE_NAME_INPUT, name)
         if email:
-            email_input = self.driver.find_element(*AccountPageLocators.PROFILE_EMAIL_INPUT)
-            email_input.clear()
-            email_input.send_keys(email)
+            self.add_text_to_element(AccountPageLocators.PROFILE_EMAIL_INPUT, email)
         self.click_to_element(AccountPageLocators.SAVE_BUTTON)
